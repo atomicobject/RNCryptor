@@ -32,7 +32,7 @@
 extern NSString *const kRNCryptorErrorDomain;
 extern const uint8_t kRNCryptorFileVersion;
 
-typedef struct _RNCryptorKeyDerivationSettings
+typedef struct RNCryptorKeyDerivationSettings
 {
   size_t keySize;
   size_t saltSize;
@@ -41,7 +41,7 @@ typedef struct _RNCryptorKeyDerivationSettings
   uint rounds;
 } RNCryptorKeyDerivationSettings;
 
-typedef struct _RNCryptorSettings
+typedef struct RNCryptorSettings
 {
   CCAlgorithm algorithm;
   size_t blockSize;
@@ -53,7 +53,7 @@ typedef struct _RNCryptorSettings
   RNCryptorKeyDerivationSettings HMACKeySettings;
 } RNCryptorSettings;
 
-static const RNCryptorSettings kRNCryptorAES256Settings = {
+const RNCryptorSettings kRNCryptorAES256Settings = {
     .algorithm = kCCAlgorithmAES128,
     .blockSize = kCCBlockSizeAES128,
     .IVSize = kCCBlockSizeAES128,
@@ -78,17 +78,18 @@ static const RNCryptorSettings kRNCryptorAES256Settings = {
     }
 };
 
-enum _RNCryptorOptions
+typedef enum _RNCryptorOptions
 {
   kRNCryptorOptionHasPassword = 1 << 0,
-};
+} _RNCryptorOptions;
+
 typedef uint8_t RNCryptorOptions;
 
-enum
+typedef enum
 {
   kRNCryptorHMACMismatch = 1,
   kRNCryptorUnknownHeader = 2,
-};
+} RNCryptorError;
 
 @class RNCryptor;
 
