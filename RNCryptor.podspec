@@ -15,7 +15,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 LIC
   }
-  s.source = { :git => 'https://github.com/atomicobject/RNCryptor.git', :commit => "51266fe644f99d30e08f959633d438b1a55d98ec" }
+  s.source = { :git => 'https://github.com/atomicobject/RNCryptor.git', :commit => "cacbf62a56a022318241ff2bb12ae66902903550" }
   s.description = 'Provides an easy-to-use, Objective-C interface to the AES functionality of CommonCrypto. Simplifies correct handling of password stretching (PBKDF2), salting, and IV.'
   s.homepage = 'https://github.com/rnapier/RNCryptor'
   s.source_files = 'RNCryptor/*.{h,m}'
