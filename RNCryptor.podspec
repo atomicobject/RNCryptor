@@ -22,6 +22,7 @@ LIC
   s.public_header_files = 'RNCryptor/*.h'
   s.requires_arc = true
   s.frameworks = 'Security'
+  s.compiler_flags = '-ObjC -all_load'
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
 end
