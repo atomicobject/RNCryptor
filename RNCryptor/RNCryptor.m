@@ -321,6 +321,33 @@ RN_CCKeyDerivationPBKDF( CCPBKDFAlgorithm algorithm, const char *password, size_
  *
  * @APPLE_LICENSE_HEADER_END@
  */
+
+const RNCryptorSettings kRNCryptorAES256Settings = {
+    .algorithm = kCCAlgorithmAES128,
+    .blockSize = kCCBlockSizeAES128,
+    .IVSize = kCCBlockSizeAES128,
+    .options = kCCOptionPKCS7Padding,
+    .HMACAlgorithm = kCCHmacAlgSHA256,
+    .HMACLength = CC_SHA256_DIGEST_LENGTH,
+    
+    .keySettings = {
+        .keySize = kCCKeySizeAES256,
+        .saltSize = 8,
+        .PBKDFAlgorithm = kCCPBKDF2,
+        .PRF = kCCPRFHmacAlgSHA1,
+        .rounds = 10000
+    },
+    
+    .HMACKeySettings = {
+        .keySize = kCCKeySizeAES256,
+        .saltSize = 8,
+        .PBKDFAlgorithm = kCCPBKDF2,
+        .PRF = kCCPRFHmacAlgSHA1,
+        .rounds = 10000
+    }
+};
+
+
 static int RN_SecRandomCopyBytes(void *rnd, size_t count, uint8_t *bytes) {
   static int kSecRandomFD;
   static dispatch_once_t onceToken;

@@ -53,30 +53,7 @@ typedef struct RNCryptorSettings
   RNCryptorKeyDerivationSettings HMACKeySettings;
 } RNCryptorSettings;
 
-const RNCryptorSettings kRNCryptorAES256Settings = {
-    .algorithm = kCCAlgorithmAES128,
-    .blockSize = kCCBlockSizeAES128,
-    .IVSize = kCCBlockSizeAES128,
-    .options = kCCOptionPKCS7Padding,
-    .HMACAlgorithm = kCCHmacAlgSHA256,
-    .HMACLength = CC_SHA256_DIGEST_LENGTH,
-
-    .keySettings = {
-        .keySize = kCCKeySizeAES256,
-        .saltSize = 8,
-        .PBKDFAlgorithm = kCCPBKDF2,
-        .PRF = kCCPRFHmacAlgSHA1,
-        .rounds = 10000
-    },
-
-    .HMACKeySettings = {
-        .keySize = kCCKeySizeAES256,
-        .saltSize = 8,
-        .PBKDFAlgorithm = kCCPBKDF2,
-        .PRF = kCCPRFHmacAlgSHA1,
-        .rounds = 10000
-    }
-};
+extern const RNCryptorSettings kRNCryptorAES256Settings;
 
 typedef enum _RNCryptorOptions
 {
