@@ -45,6 +45,13 @@
 @synthesize IV = _IV;
 @synthesize haveWrittenHeader = _haveWrittenHeader;
 
++ (NSData *)encryptAES256WithData:(NSData *)data password:(NSString *)password error:(NSError **)error
+{
+    return [self encryptData:data
+                withSettings:kRNCryptorAES256Settings
+                    password:password
+                       error:error];
+}
 
 + (NSData *)encryptData:(NSData *)thePlaintext withSettings:(RNCryptorSettings)theSettings password:(NSString *)aPassword error:(NSError **)anError
 {

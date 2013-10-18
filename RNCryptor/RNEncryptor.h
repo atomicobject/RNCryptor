@@ -38,6 +38,7 @@
                           handler:(RNCryptorHandler)handler;
 
 + (NSData *)encryptData:(NSData *)data withSettings:(RNCryptorSettings)settings password:(NSString *)password error:(NSError **)error;
++ (NSData *)encryptAES256WithData:(NSData *)data password:(NSString *)password error:(NSError **)error;
 + (NSData *)encryptData:(NSData *)data withSettings:(RNCryptorSettings)settings encryptionKey:(NSData *)encryptionKey HMACKey:(NSData *)HMACKey error:(NSError **)error;
 
 @end

@@ -52,6 +52,11 @@ static const NSUInteger kPreambleSize = 2;
 @synthesize password = _password;
 @synthesize settings = _settings;
 
++ (NSData *)decryptAES256WithData:(NSData *)theCipherText password:(NSString *)aPassword error:(NSError **)anError
+{
+    return [self decryptData:theCipherText withSettings:kRNCryptorAES256Settings password:aPassword error:anError];
+}
+
 + (NSData *)decryptData:(NSData *)theCipherText withSettings:(RNCryptorSettings)settings password:(NSString *)aPassword error:(NSError **)anError
 {
   RNDecryptor *cryptor = [[self alloc] initWithPassword:aPassword
